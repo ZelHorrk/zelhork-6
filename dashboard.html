@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Finance Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Finance Insights</h2>
+                <button id="sidebarToggle">☰</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="home-link">
+                        <i class="fas fa-home"></i>Back to Home
+                    </a></li>
+                    <li><a href="#" class="active">
+                        <i class="fas fa-chart-line"></i>Dashboard
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fas fa-file-alt"></i>Reports
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fas fa-cog"></i>Settings
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <label for="darkMode">Dark Mode</label>
+                <input type="checkbox" id="darkMode">
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Financial Dashboard</h1>
+                <div class="filters">
+                    <select id="dateRange">
+                        <option value="30">Last 30 Days</option>
+                        <option value="60">Last 60 Days</option>
+                        <option value="90">Last 90 Days</option>
+                    </select>
+                    <input type="text" id="search" placeholder="Search transactions...">
+                </div>
+            </header>
+
+            <section class="charts">
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </section>
+
+            <section class="data-table">
+                <table id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- data.js -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
